@@ -1,0 +1,16 @@
+StartTime:11:00:00 //done
+starttimeperiod:AM
+EndTime:12:00:00 //done
+endtimeperiod:AM
+EventDate:2015-02-21 //done
+EventTitle:Sunday Fun day //done
+recurring:Yes //done
+check_list[]:Sunday 
+RecurringWeeks:3 //done
+Color:#6495ED //done
+submit:Create Event
+
+atitle:Getting Ready
+astart:2015-02-21 09:30:00
+aend:2015-02-21 13:00:00
+acolor:#FF00FF

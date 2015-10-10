@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='lib/fullcalendar.css' />
+<link rel='stylesheet' href='lib/weather.css' />
+<link href='lib/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='lib/fullcalendar.js'></script>
+<script src='lib/jquery.simpleWeather.js'></script>
+<script src='lib/calendar.js'></script>
+<script src='lib/weather.js'></script>
+<script src='lib/advanced.js'></script>
+<style type='text/css'>
+
+        body {
+                text-align: center;
+		position: relative;
+    		margin: auto;
+                font-size: 16px;
+                font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;		        
+	}
+	
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	#advancedHeader { text-align: center;}
+	#advancedpre {text-align: left;}
+	#advanced {
+	text-align: center;
+	padding: 5px;
+	}
+        #calendar {
+		font-size: 12px;
+                margin: 0 auto;
+                float:left;
+		width:50%
+        }
+	#inner {
+		margin: auto;
+	}
+	#weather {
+                margin: 0 auto;
+		float:left;
+		width:50%
+        } 
+
+</style>
+</head>
+<body>
+<div id='inner'>
+<h2>Hockey House Homepage</h2>
+<div id='calendar'></div>
+<div id='weather'></div>
+<div id='advancedHeader'><h2>Advanced Event Creation:</h2></div>
+<div id='advancedpre'>
+<p>You can create events by clicking and dragging your cursor on the calendar, and answering the pop up questions. You also can create a more advanced event (recurring event, custom colors, etc). Would you like to create an advanced event?</p>
+<label for="advancedYes">Yes</label>
+<input type="radio" name="advanced" id="advancedYes" value="Yes"><br>
+<label for="advancedNo">No</label>
+<input type="radio" name="advanced" id="advancedNo" value="No"><br></div>
+<div id='advanced'>
+<form
+<p>Please enter the start and end times below in a format similar to this: HH:MM:SS <br>
+    <label for='StartTime'>Event start time:</label><input type="text" id="StartTime" name="StartTime" /><label for="startTimeAM">AM</label><input type="radio" name="starttimeperiod" id="startTimeAM" value="AM"><label for="startTimePM">PM</label><input type="radio" name="starttimeperiod" id="startTimePM" value="PM"><br>
+    <label for='EndTime'>Event end time:</label><input type="text" id="EndTime" name="EndTime" /><label for="endTimeAM">AM</label><input type="radio" name="endtimeperiod" id="endTimeAM" value="AM"><label for="endTimePM">PM</label><input type="radio" name="endtimeperiod" id="endTimePM" value="PM"><br>
+<label for='EventDate'>Please enter the date of the event like this: 2015-01-08</label><input type="text" id="EventDate" name="EventDate" /><br>
+    Please enter the title of your event:<input type="text" id="EventTitle" name="EventTitle" />
+    </p>
+<p> Is this a recurring event? </p>
+<label for="recurringYes">Yes</label>
+<input type="radio" name="recurring" id="recurringYes" value="Yes"><br>
+<label for="recurringNo">No</label>
+<input type="radio" name="recurring" id="recurringNo" value="No"><br>
+<div id="showdays">
+<p>What days will this event occur on?</p>
+    <input type="checkbox" name="Monday" value="Monday">Monday
+    <input type="checkbox" name="Tuesday" value="Tuesday">Tuesday
+    <input type="checkbox" name="Wednesday" value="Wednesday">Wednesday
+    <input type="checkbox" name="Thursday" value="Thursday">Thursday
+    <input type="checkbox" name="Friday" value="Friday">Friday
+    <input type="checkbox" name="Saturday" value="Saturday">Saturday 
+    <input type="checkbox" name="Sunday" value="Sunday">Sunday <br>
+How many weeks will this event go for? <input type="text" id="RecurringWeeks" name="RecurringWeeks" />     
+</div>
+<p>
+    <label for='Color'>Color</label>
+    <select id="Color"  name="Color">
+        <option value="#4682B4" selected="selected">Select a Color</option>
+        <option value="#6495ED">Blue</option>
+        <option value="#7FFF00">Chartreuse</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#A9A9A9">Gray</option>
+        <option value="#FF8C00">Orange</option>
+        <option value="#228B22">Green</option>
+        <option value="#FFD700">Gold</option>
+        <option value="#FFB6C1">Pink</option>
+        <option value="#FF0000">Red</option>
+    </select>
+</p>
+    <input type="submit" name="submit" value="Create Event" onclick="sanitizeInput()">
+</form>
+</div>
+</div>
+</body>
+</html>
